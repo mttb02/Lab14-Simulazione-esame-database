@@ -58,10 +58,14 @@ class View(ft.UserControl):
         self._page.controls.append(self.txt_result2)
         self._page.update()
 
+        self.btn_countedges.disabled = True
+
         self.btn_search = ft.ElevatedButton(text="Cerca cammino", on_click=self._controller.handle_search)
         row3 = ft.Row([self.btn_search],
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row3)
+
+        self.btn_search.disabled = True
 
         # List View where the reply is printed
         self.txt_result3 = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
