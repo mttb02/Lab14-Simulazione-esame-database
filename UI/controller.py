@@ -11,13 +11,10 @@ class Controller:
 
     def handle_graph(self, e):
 
-        self._model.create_graph()
-
         self._view.txt_result.controls.clear()
 
-        temp_numero_vertici = self._model.get_num_nodes()
-        temp_numero_archi = self._model.get_num_edges()
-        self._view.txt_result.controls.append(ft.Text(f"Numero di vertici {temp_numero_vertici} Numero di archi {temp_numero_archi}"))
+        self._model.create_graph()
+        self._view.txt_result.controls.append(ft.Text(f"Numero di vertici {self._model.get_num_nodes()} Numero di archi {self._model.get_num_edges()}"))
 
         temp_arco_min, temp_arco_max = self._model.get_info_edges()
         self._view.txt_result.controls.append(ft.Text(f"Informazioni sui pesi degli archi - valore minimo {temp_arco_min} e valore massimo {temp_arco_max}"))
